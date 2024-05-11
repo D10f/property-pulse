@@ -18,11 +18,9 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <html lang="en">
             <body>
-                <main>
-                    <Navbar />
-                    {children}
-                    <Footer />
-                </main>
+                <Navbar />
+                <main className="py-6">{children}</main>
+                <Footer />
             </body>
         </html>
     );
