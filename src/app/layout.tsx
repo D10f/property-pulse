@@ -19,7 +19,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <html lang="en">
             <body>
                 <Navbar />
-                <main className="py-6">{children}</main>
+                <main>{children}</main>
                 <Footer />
             </body>
         </html>
