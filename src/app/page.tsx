@@ -19,26 +19,24 @@ const HomePage = () => {
                         </a>
                     }
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                    perferendis, blanditiis minima consectetur ullam quam quae laborum
-                    ratione nesciunt nemo ducimus ipsa, quibusdam modi adipisci!
+                    Find your dream rental property. Bookmark properties and contact
+                    owners.
                 </InfoBox>
 
                 <InfoBox
-                    heading="For Renters"
-                    bgColor="bg-gray-100"
+                    heading="For Property Owners"
+                    bgColor="bg-blue-100"
                     buttonCTA={
                         <a
-                            className="bg-black text-gray-100 p-2 rounded"
-                            href="/properties"
+                            className="bg-blue-500 text-gray-100 p-2 rounded"
+                            href="/properties/add"
                         >
-                            Browse Properties
+                            Add Properties
                         </a>
                     }
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-                    perferendis, blanditiis minima consectetur ullam quam quae laborum
-                    ratione nesciunt nemo ducimus ipsa, quibusdam modi adipisci!
+                    List your properties and reach potential tenants. Rent as an Airbnb or
+                    long-term.
                 </InfoBox>
             </div>
         </>
