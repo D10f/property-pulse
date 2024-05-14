@@ -1,46 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-
-type Location = {
-    "street": string,
-    "city": string,
-    "state": string,
-    "zipcode": string
-};
-
-type Rate = {
-    nightly?: number,
-    weekly?: number,
-    monthly?: number
-};
-
-type Contact = {
-    name: string;
-    email: string;
-    phone: string;
-}
-
-type Property = {
-    "_id": string,
-    "owner": string,
-    "name": string,
-    "type": string,
-    "description": string,
-    "location": Location,
-    "beds": number,
-    "baths": number,
-    "square_feet": number,
-    "amenities": string[],
-    "rates": Rate,
-    "seller_info": Contact,
-    "images": string[],
-    "isFeatured": boolean,
-    "createdAt": string,
-    "updatedAt": string
-};
+import { Property } from '@/types';
 
 type PropertyCardProps = {
-    property: Property;
+  property: Property;
 }
 
 const propertyRateDisplay = ({ rates }: Property) => {
