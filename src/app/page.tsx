@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import InfoBox from "@/components/InfoBox";
 
@@ -11,12 +12,12 @@ const HomePage = () => {
                     heading="For Renters"
                     bgColor="bg-gray-100"
                     buttonCTA={
-                        <a
+                        <Link
                             className="bg-black text-gray-100 p-2 rounded"
                             href="/properties"
                         >
                             Browse Properties
-                        </a>
+                        </Link>
                     }
                 >
                     Find your dream rental property. Bookmark properties and contact
@@ -27,12 +28,12 @@ const HomePage = () => {
                     heading="For Property Owners"
                     bgColor="bg-blue-100"
                     buttonCTA={
-                        <a
+                        <Link
                             className="bg-blue-500 text-gray-100 p-2 rounded"
                             href="/properties/add"
                         >
                             Add Properties
-                        </a>
+                        </Link>
                     }
                 >
                     List your properties and reach potential tenants. Rent as an Airbnb or
