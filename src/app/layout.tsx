@@ -19,7 +19,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <html lang="en">
             <body>
                 <Navbar />
-                <main>{children}</main>
+                <main className="mb-40">{children}</main>
                 <Footer />
             </body>
         </html>
