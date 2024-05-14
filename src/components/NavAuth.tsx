@@ -42,14 +42,18 @@ const NavAuth = () => {
                 />
             }
         >
-            {profileLinks.map((link, idx) => (
-                <>
-                    <Link href={link.href} key={idx} className="py-2">
-                        <span>{link.title}</span>
-                    </Link>
+            <ul>
+                {profileLinks.map((link, idx) => (
+                    <li key={idx}  className="py-2">
+                        <Link href={link.href}>
+                            <span>{link.title}</span>
+                        </Link>
+                    </li>
+                ))}
+                <li>
                     <button className="py-2">Sign out</button>
-                </>
-            ))}
+                </li>
+            </ul>
         </Dropdown>
     );
 };
