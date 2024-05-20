@@ -1,8 +1,8 @@
 export type Location = {
-    "street": string,
-    "city": string,
-    "state": string,
-    "zipcode": string
+    street: string,
+    city: string,
+    state: string,
+    zipcode: string
 };
 
 export type Rate = {
@@ -31,7 +31,7 @@ export type Property = {
     "rates": Rate,
     "seller_info": Contact,
     "images": string[],
-    "isFeatured": boolean,
+    "is_featured": boolean,
     "createdAt": string,
     "updatedAt": string
 };
