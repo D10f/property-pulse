@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import InfoBox from "@/components/InfoBox";
 import PropertyCard from "@/components/PropertyCard";
 import properties from '@/assets/properties.json';
+import connect from '@/config/db';
 
 const getRandomItems = <T extends Array<any>>(list: T, amount: number) => {
     if (amount <= 0) throw new Error('Must be a positive integer greater than 0');
@@ -10,7 +11,10 @@ const getRandomItems = <T extends Array<any>>(list: T, amount: number) => {
     return list.sort(() => Math.random() > 0.5 ? 1 : -1).slice(0, amount);
 };
 
-const HomePage = () => {
+const HomePage = async () => {
+
+    await connect();
+
     return (
         <>
             <Hero />
