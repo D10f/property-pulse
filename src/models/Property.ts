@@ -93,4 +93,4 @@ const PropertySchema = new Schema<IProperty>({
     }
 }, { timestamps: true });
 
-export default model('Property', PropertySchema);
+export default models.Property || model('Property', PropertySchema);

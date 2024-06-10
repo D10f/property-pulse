@@ -5,7 +5,7 @@ const password = process.env.MONGO_INITDB_ROOT_PASSWORD;
 const database = process.env.MONGO_INITDB_DATABASE;
 const dbServer = process.env.MONGO_SERVER;
 
-const connectionURI = `mongodb://${username}:${password}@${dbServer}:27017/${database}`;
+const connectionURI = `mongodb://${username}:${password}@${dbServer}:27017/${database}?authSource=admin`;
 let connected = false;
 
 export default async function connect() {
@@ -21,6 +21,6 @@ export default async function connect() {
         connected = true;
         console.log('MongoDB connection established successfully.')
     } catch (error) {
-        console.error(`Something went wrong establishing connection to database: ${error.message}`);
+        console.error(`Something went wrong establishing connection to database: ${(error as Error).message}`);
     }
 }

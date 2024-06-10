@@ -3,17 +3,28 @@ import Hero from "@/components/Hero";
 import InfoBox from "@/components/InfoBox";
 import PropertyCard from "@/components/PropertyCard";
 import properties from '@/assets/properties.json';
-import connect from '@/config/db';
 
-const getRandomItems = <T extends Array<any>>(list: T, amount: number) => {
-    if (amount <= 0) throw new Error('Must be a positive integer greater than 0');
-    if (list.length < amount) return list;
-    return list.sort(() => Math.random() > 0.5 ? 1 : -1).slice(0, amount);
+// const getRandomItems = <T extends Array<any>>(list: T, amount: number) => {
+//     if (amount <= 0) throw new Error('Must be a positive integer greater than 0');
+//     if (list.length < amount) return list;
+//     return list.sort(() => Math.random() > 0.5 ? 1 : -1).slice(0, amount);
+// };
+
+const fetchProperties = async () => {
+    try {
+        const res = await fetch('http://localhost:3000/api/properties?limit=3');
+        if (!res.ok)
+            throw new Error('Failed to fetch properties data. Err: ' + res.statusText);
+        return await res.json();
+    } catch (error) {
+        console.error((error as Error).message);
+    }
 };
 
 const HomePage = async () => {
 
-    await connect();
+    const properties = await fetchProperties();
+    console.log(properties.length);
 
     return (
         <>
@@ -59,9 +70,12 @@ const HomePage = async () => {
                     <h2 className="text-3xl font-bold text-blue-500 mb-6 text-center">Recent Properties</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {getRandomItems(properties, 3).map(property => (
+                        {properties.map(property => (
                             <PropertyCard key={property._id} property={property} />
                         ))}
+                        {/* {getRandomItems(properties, 3).map(property => (
+                            <PropertyCard key={property._id} property={property} />
+                        ))} */}
                     </div>
                 </div>
 
